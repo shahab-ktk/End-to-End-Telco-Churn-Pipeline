@@ -6,8 +6,6 @@ venv/
 .venv
 artifacts/*.csv
 artifacts/Churn.csv
-artifacts/*.pkl
-artifacts/*.joblib
 logs/
 *.log
 .vscode/
