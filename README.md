@@ -1,9 +1,12 @@
 # 📊 End-to-End Telco Churn Pipeline
 
-[![Python Version](https://shields.io)](https://python.org)
-[![Framework](https://shields.io)](https://scikit-learn.org)
-[![Dashboard](https://shields.io)](https://streamlit.io)
-[![License](https://shields.io)](https://opensource.org)
+
+<a href="https://python.org"><img src="https://www.python.org/static/img/python-logo.png" height="35" valign="middle"></a>&nbsp;
+<a href="https://scikit-learn.org"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-without-subtitle.svg" height="35" valign="middle"></a>&nbsp;
+<a href="https://streamlit.app"><img src="https://github.com/user-attachments/assets/02fb3d1b-4b60-4fab-9936-44a0a9a9af0e" height="35" valign="middle"></a>&nbsp;
+
+
+
 
 
 An end-to-end, enterprise-grade machine learning application designed to predict and mitigate customer attrition in the telecommunications sector. Moving away from static notebooks, this project is built entirely on a highly decoupled **Modular Software Architecture**, implementing automated data components, strict data-leakage safeguards, and a live user dashboard console.
