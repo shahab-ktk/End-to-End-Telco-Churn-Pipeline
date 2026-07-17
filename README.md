@@ -1,4 +1,4 @@
-# 📊 Production-Ready Telco Churn Pipeline
+# 📊 End-to-End Telco Churn Pipeline
 
 [![Python Version](https://shields.io)](https://python.org)
 [![Framework](https://shields.io)](https://scikit-learn.org)
@@ -36,10 +36,12 @@ The pipeline's strong performance is driven by 3 custom-synthesized features tha
 The system is split into independent micro-modules following industry standard code-base design patterns:
 
 ```text
-Production-Ready-Telco-Churn-Pipeline/
+End-to-End Telco Churn Pipeline/
 │
-├── artifacts/                   # Persisted data artifacts and trained model binaries
-│   ├── Churn.csv                # Automated raw backup source
+├──  artifacts/                   # Persisted data artifacts and trained model binaries
+│   ├── Churn.csv                # Automated raw backup source data file
+│   ├── train.csv                # Stratified training split data file (80%)
+│   ├── test.csv                 # Stratified testing split data file (20%)
 │   ├── model.pkl                # Serialized trained Logistic Regression model 
 │   └── preprocessor.pkl         # Serialized ColumnTransformer preprocessing rules
 │
@@ -73,8 +75,8 @@ Replicate this exact environment workspace on your local computer by executing t
 
 ### 1. Initialize and Activate the Virtual Environment
 ```bash
-# Create an isolated local virtual environment folder using Python 3.10
-conda create -p ./venv python=3.10 -y
+# Create an isolated local virtual environment folder using Python 3.12.7
+conda create -p ./venv python=3.12.7 -y
 
 # Activate the local prefix environment space
 conda activate ./venv
@@ -115,3 +117,17 @@ streamlit run app.py
 The decoupled nature of this project means it is fully optimized for containerized deployment (Docker, AWS ECS, or Render). The **`PredictPipeline`** class splits object allocation into a two-tiered system:
 *   **The Constructor (`__init__`)** loads model and transformer weights into memory **once** when the server boots.
 *   **The `predict_live_input` method** runs entirely in RAM, bypassing disk I/O operations to effortlessly manage high-concurrency API calls with millisecond latency.
+
+---
+
+## 🌐 Live Web Application & Cloud Deployment
+
+The prediction architecture has been successfully compiled and deployed to the cloud as a live, interactive web application. This interface bridges the gap between machine learning backend outputs and non-technical business stakeholders, enabling customer success managers to audit client risk variables instantly in their web browsers.
+
+*   📡 **Live Dashboard URL:** [TelcoPulse: Enterprise Retention Console](https://appuction-ready-telco-churn-pipeline-m5gs2jauvvkkyexk6fjpa8.streamlit.app/)
+*   ☁️ **Hosting Infrastructure:** Streamlit Community Cloud (Containerized Microservice)
+*   🔋 **Operational State:** Live & Stable (Bypasses disk I/O to perform low-latency memory-cached inferences)
+
+### 🖥️ Interactive Web Console Interface Preview
+The dashboard accepts user demographic markers, contract infrastructures, and continuous financial fields via interactive sliders and dropdown selectors. Upon triggering calculation workflows, it securely instantiates the backend `PredictPipeline`, outputs a granular decimal-level risk risk percentage and returns contextual corporate intervention playbooks dynamically tailored to that customer's specific risk bracket.
+
